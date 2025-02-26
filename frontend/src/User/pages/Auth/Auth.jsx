@@ -30,11 +30,11 @@ const AuthForm = () => {
     e.preventDefault();
     setIsLoading(true);
     setIsError(false);
-
+    console.log("API URL:", import.meta.env.VITE_API_URL);
     try {
       const url = isLogin
-        ? 'http://localhost:3000/api/user/auth/login'
-        : 'http://localhost:3000/api/user/auth/signup';
+        ? "http://localhost:8000/api/user/auth/login"
+        : "http://localhost:8000/api/user/auth/signup";
 
       const response = await fetch(url, {
         method: 'POST',
@@ -83,7 +83,7 @@ const AuthForm = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4 md:px-0">
       <div className="flex flex-col lg:flex-row w-full max-w-4xl bg-white rounded-2xl shadow-lg overflow-hidden mt-[10vh] md:mt-[15vh]">
-        
+
         {/* Illustration Card */}
         <div className="lg:w-1/2 bg-[#1a2226ff] p-6 md:p-10 flex items-center justify-center">
           <img

@@ -25,12 +25,16 @@ const FarmConnect = () => {
               Join our thriving community of over 5,000 farm products and a network of trusted buyers and sellers.
             </p>
             <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+              <Link to="/dashboard">
               <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">
                 Start Trading
               </button>
+              </Link>
+              <Link to="/order">
               <button className="bg-yellow-500 hover:bg-yellow-600 text-green-900 font-bold py-3 px-8 rounded-full transition duration-300 shadow-lg">
                 Create Contract
               </button>
+              </Link>
             </div>
           </div>
         </section>
