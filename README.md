@@ -1,111 +1,115 @@
+# CropConnect
+
+CropConnect is a web platform designed for wholesale crop trading, connecting sellers and consumers seamlessly. Although still in development, CropConnect offers a robust set of features for both sellers and consumers in the agricultural marketplace.
+
+## Deployed Link
+
+https://crop-connect-lime.vercel.app/
+
+## Architecture
+
+![diagram-export-8-15-2024-7_52_30-PM](https://github.com/user-attachments/assets/6587f476-8c76-4232-9ea5-5988ff6f3624)
+
+## Features
+
+1. **Dual Interfaces**: CropConnect provides separate interfaces for consumers and sellers, accessible through the navbar with options for SignUp and SignIn including email verification for the created account.
+
+***Seller Side***
+
+2. **Visualizing Sales Data**: Incorporated Recharts (graphs) into the project, which has allowed to create insightful visualisations of sales data.
+
+3. **Product Management**: Sellers can easily add products, including images, details, location via map selection, current stocks, minimum order quantity restrictions, etc. which can be edited and deleted further.
+
+4. **Order Management**: Sellers have access to a dashboard displaying order requests, including order location coordinates on a map.
+
+5. **FAQ Section**: Sellers can address common inquiries about their products through a dedicated FAQ section visible to consumers.
+
+6. **CropSense AI**: Powered by Gemini AI, used to predict the crops according to the given parmeters.
+
+***Consumer Side***
+
+7. **User-Friendly Consumer Interface**: Consumers can browse various categories and products conveniently from the homepage.
+
+8. **Detailed Product Dashboard**: Product details, including stock availability and minimum order quantity, are displayed prominently. Users can add products to their cart directly from the dashboard.
+
+9. **Review System**: Users can leave reviews for products, enhancing transparency and trust.
+
+10. **Contact Farmer Form**: A contact form allows users to inquire about products directly, with answered queries becoming part of the FAQ section. It also has map which shows the product location.
+
+11. **Dynamic Cart Functionality**: Users can manage product quantities in the cart, with limitations based on minimum order quantities and available stock.
+
+12. **Seamless Checkout**: The checkout process allows users to review orders, including delivery charges, select delivery locations, and place orders securely.
+
+13. **Real-Time Stock Updates (WebSocket)**: Implemented WebSocket functionality to provide real-time stock updates. Users can see live changes in stock availability without needing to reload the page. *Please note that this feature may not be visible on the deployed website (deployed on Vercel) as Vercel does not support WebSocket connections. However, if the project is run locally, real-time updates can be seen.*
+
+## Technologies Used
+
+- MongoDB
+- NodeJS
+- ExpressJS
+- ReactJS
+- Redux
+- Tailwind CSS
+- Websocket (socket.io)
+- Cloudinary (for image storage)
+- Leaflet (for map)
+- Unsplash (for images)
+- Recharts (for graphs)
+- Gemini AI
+- Other supporting technologies
+
+## Installation
+
+To run CropConnect locally, ensure you have NodeJS and MongoDB installed. Follow these steps:
+
+1. **Clone the repository**:
+    ```bash
+    git clone <repository-url>
+    cd CropConnect
+    ```
+
+2. **Frontend Setup**:
+    - Navigate to the CropConnect `client` folder.
+    - Create a `.env` file in the root directory of the `client` folder.
+    - Add the following environment variables to the client `.env` file:
+        ```plaintext
+        VITE_CROPCONNECT_API = "https://cropconnect-backend.vercel.app/" 
+        # Replace if you want to run the Backend local server to http://localhost:8080/
+        ```
+    - To run the Frontend:
+        ```bash
+        cd client
+        npm run dev
+        ```
+
+3. **Backend Setup**:
+    - Navigate to the CropConnect `server` folder.
+    - Create a `.env` file in the root directory of the `server` folder.
+    - Add the following environment variables to the server `.env` file:
+        ```plaintext
+        MONGO_DB_URL = {your mongodb url}
+        GEMINI_API_KEY = {your gemini api key}
+        GMAIL_ID = {your gmail id}
+        APP_PASSWORD = {your google account app password}
+        JWT_SECRET = {jwt secret}
+        CLOUDINARY_CLOUD_NAME = {cloudinary clound name}
+        CLOUDINARY_API_KEY = {cloudinary api key}
+        CLOUDINARY_API_SECRET = {cloudinary api secret}
+        ```
+    - To run the Backend:
+        ```bash
+        # Use nodemon for automatic server restarts upon file changes
+        nodemon
+        # or
+        # Run the server with NodeJS
+        node index.js
+        ```
+
+By following these steps, you'll have the CropConnect application running locally on your machine. Adjust configurations as needed for your development environment.
+
+## Contribution
+
+CropConnect welcomes contributions from the community. Feel free to open issues or submit pull requests to help improve the platform.
 
 
----
-
-# Farm-Connect
-
-## Overview
-**Farm-Connect** is a platform developed as part of the Vidyalankar Polytechnic Internal Hackathon. The primary objective of this project is to empower farmers by providing them with a direct marketplace to sell their products to potential buyers. By eliminating middlemen, **Farm-Connect** ensures that farmers receive a fair price for their produce, thereby increasing their income and supporting sustainable agriculture.
-
-Desktop Mode :- 
-![Screenshot (594)](https://github.com/user-attachments/assets/f8428290-3620-4355-9ff1-48207c567b9f)     Mobile Mode :-
-
-
-![Screenshot (595)](https://github.com/user-attachments/assets/9278e5f2-1b32-4e4f-b05b-7f3013a1bdc5)
-
-
-
-
-## Problem Statement
-The platform addresses the problem of limited market access and low income for farmers by connecting them directly with buyers. This helps in:
-- Reducing the exploitation of farmers by intermediaries.
-- Offering competitive prices for farm produce.
-- Providing buyers with fresh and quality products straight from the source.
-
-## Key Features
-- **Direct Sales Platform:** Farmers can list their products directly on the platform, setting their own prices.
-- **Buyer-Seller Communication:** Integrated chat and messaging system for easy communication between buyers and sellers.
-- **Secure Payments:** Supports multiple payment gateways to ensure secure transactions.
-- **Order Management:** Easy tracking of orders, deliveries, and payments for both farmers and buyers.
-- **Dashboard for Farmers:** A comprehensive dashboard for farmers to monitor their sales, revenue, and product listings.
-
-## Technology Stack
-- **Frontend:** React, Tailwind CSS for a modern, responsive user interface.
-- **Backend:** Node.js, Express.js for server-side operations.
-- **Database:** MongoDB for managing user data, product listings, and transactions.
-- **Authentication:** JWT-based authentication for secure access.
-- **Payment Integration:** Support for payment gateways to handle transactions securely.
-
-## Installation and Setup
-To run the project locally, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/TanLucifer/Farm-Connect.git
-   cd farm-connect
-   ```
-
-2. **Install necessary node modules:**
-   ```bash
-   npm i
-   ```
-
-3. **Set up environment variables:**
-   - Contact the project maintainer for the `.env` file and place it in the root directory.
-
-4. **Frontend Setup:**
-   - Navigate to the frontend directory:
-     ```bash
-     cd frontend
-     ```
-   - Start the frontend development server:
-     ```bash
-     npm run dev
-     ```
-
-5. **Backend Setup:**
-   - Start the backend server:
-     ```bash
-     npm start
-     ```
-
-6. **Access the platform:**
-   Open your browser and go to `http://localhost:5173` to start using **Farm-Connect**.
-
-## Usage
-1. **Farmers:**
-   - Sign up and create a profile.
-   - List your products with detailed descriptions, prices, and available quantities.
-   - Manage your orders and track sales through the dashboard.
-
-2. **Buyers:**
-   - Browse through various products listed by farmers.
-   - Place orders directly through the platform.
-   - Communicate with farmers for any specific requirements or bulk purchases.
-
-## Contributions
-Contributions are welcome! If you'd like to contribute, please fork the repository, create a new branch, and submit a pull request. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
-## Acknowledgements
-This project was developed as part of the Vidyalankar Polytechnic Internal Hackathon. Special thanks to all the mentors and organizers for their guidance and support.
-
----
-
-
-### Contributors
-<a href="https://github.com/TanLucifer" target="_blank">
-                    <img src="https://avatars.githubusercontent.com/u/178185038?v=4&s=40" alt="TanLucifer" style="border-radius: 100px; width: 40px; height: 40px; border: 2px solid white; margin-right: 8px;"/>
-                 </a> 
-                <a href="https://github.com/Aditya6273" target="_blank">
-                    <img src="https://avatars.githubusercontent.com/u/91383604?v=4&s=40" alt="Aditya6273" style="border-radius: 100px; width: 40px; height: 40px; border: 2px solid white; margin-right: 8px;"/>
-                 </a> 
-                <a href="https://github.com/renoschubert" target="_blank">
-                    <img src="https://avatars.githubusercontent.com/u/46114615?v=4&s=40" alt="renoschubert" style="border-radius: 100px; width: 40px; height: 40px; border: 2px solid white; margin-right: 8px;"/>
-                 </a> 
-                <a href="https://github.com/ashlesh-kadam" target="_blank">
-                    <img src="https://avatars.githubusercontent.com/u/178250428?v=4&s=40" alt="ashlesh-kadam" style="border-radius: 100px; width: 40px; height: 40px; border: 2px solid white; margin-right: 8px;"/>
-                 </a> 
-                
+**If you find this project helpful, we'd appreciate it if you could give it a star ⭐.**
