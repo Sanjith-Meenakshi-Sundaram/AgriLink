@@ -32,8 +32,8 @@ export async function handleUpload(file) {
   const _id = uuidv4();
   const extension = file.name.split('.').pop();
 
-  //const storageRef = ref(storage, `/files/${_id + extension}`);
-  const storageRef = ref(storage, `/files/${_id}.${extension}`);
+  const storageRef = ref(storage, `/files/${_id + extension}`);
+  //const storageRef = ref(storage, `/files/${_id}.${extension}`);
 
   const compressedImage = await compressImage(file);
 
