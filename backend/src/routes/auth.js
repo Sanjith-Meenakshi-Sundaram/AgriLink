@@ -45,6 +45,8 @@ router.post('/login', async (req, res) => {
  * @param {Object} req.body.location - The user's location.
  */
 router.post('/signup', async (req, res) => {
+  console.log("Signup route hit!");
+  console.log(req.body)
   const { error } = validateSignUp(req.body)
   if (error) return res.status(400).send(getErrorResponse(error.details[0].message))
 
